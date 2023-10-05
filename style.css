@@ -1,0 +1,112 @@
+body {
+    height: 100vh;
+    margin: 0px;
+    background-color: #FF00A5;
+    color: white;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.logoContainer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+}
+
+#logo {
+    width: 271px;
+    height: auto;
+}
+
+.textContainer {
+    margin-top: 34px;
+    text-align: center;
+    padding: 0 16px 0 16px;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.buttonContainer {
+    margin-top: 46px;
+}
+
+p {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    color: white;
+    background-color: #17B5FD;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 22px;
+    font-family: 'Alfa Slab One', cursive;
+    text-align: center;
+}
+
+#play {
+    width: 198px;
+    height: 80px;
+    margin-top: 62px;
+}
+
+.mainBtn {
+    width: 250px;
+    height: 80px;
+    margin-bottom: 35px;
+}
+
+#_1 {
+    margin-top: 46px;
+}
+
+.emoji {
+    font-size: 32px;
+}
+
+img {
+    height: calc(100%/3);
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+}
+
+.buttonWrapper button {
+    font-size: 24px;
+    width: 160px;
+    height: 80px;
+}
+
+#inlineButtons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#inlineButtons button {
+    margin: unset;
+}
+
+.w250 {
+    width: 250px !important;
+    margin-bottom: 35px;
+}
+
+.bigger {
+    font-size: 32px;
+}
