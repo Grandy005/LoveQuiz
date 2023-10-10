@@ -27,19 +27,19 @@
     <link rel="stylesheet" href="style.css">
     <title>Love Quiz</title>
 </head>
-<body>
+<body onload="fadeInButtons()">
     <div class="logoContainer">
-        <img id="logo" src="Love-Quiz-06-09-2023.png" alt="Love Quiz">
+        <img class="logo" src="Love-Quiz-06-09-2023.png" alt="Love Quiz">
     </div>
 
-    <div class="textContainer" id="dynamic">
-        Mit kaptál szülinapodra?
+    <div class="textContainer">
+        Mi <span class="bigger">🐒</span> kedvenc vízmárkája?
     </div>
 
     <div class="buttonWrapper">
-        <button class="w250" id="_1">Plüssmaci <span class="bigger">🧸</span></button>
-        <button class="w250" id="_2">Virág <span class="bigger">💐</span></button>
-        <button class="w250" id="_3">Utazás <span class="bigger">🧳</span></button>
+        <button class="w250 third" id="_1">Szentkirályi</button>
+        <button class="w250 third correct" id="_2">Emese</button>
+        <button class="w250 third" id="_3">Mizse</button>
     </div>
 
     <script src="script.js"></script>

@@ -1,22 +1,37 @@
+function fadeInMain() {
+    let img = document.querySelector('img');
+    let text = document.querySelector('.textContainer');
+    setTimeout(() => {
+        img.style.opacity = '1';        
+    }, 200);
+    setTimeout(() => {
+        text.style.opacity = '1';
+    }, 1000);
+};
+
+function fadeInButtons() {
+    let buttons = document.querySelectorAll('button');
+
+    buttons.forEach((element, index) => {
+        setTimeout(() => {
+            element.style.opacity = '1';
+        }, index*1000);
+    })
+}
+
 //first page
 let firstPageButtons = document.querySelectorAll('.mainBtn');
 
 firstPageButtons.forEach(element => {
     element.addEventListener('click', (event) => {
         if (event.target.className.includes('correct')) {
-            event.target.style.border = '5px solid #4CEC68';
-            setTimeout(() => window.location.replace('second.html'), 200);
+            localStorage.setItem('first', 'correct');
+            location.replace('second.html');
         }
         else {
-            event.target.style.border = '5px solid #D8233Dff';
-            event.target.style.opacity = '0.5';
-            if (event.target.innerHTML == 'Július 1.') {
-                event.target.innerHTML = 'Majdnem jou';
-            }
-            else if (event.target.innerHTML == 'Június 29.') {
-                event.target.innerHTML = '-1 nap';
-            }
+            localStorage.setItem('first', 'incorrect');
         }
+        location.replace('second.html');
     });
 });
 
@@ -26,28 +41,44 @@ let secondPageButtons = document.querySelectorAll('.secondPageButtons');
 secondPageButtons.forEach(element => {
     element.addEventListener('click', (event) => {
         if (event.target.className.includes('correct')) {
-            event.target.style.border = '5px solid #4CEC68';
-            setTimeout(() => window.location.replace('third.html'), 200);
+            localStorage.setItem('second', 'correct');
         }
         else {
-            event.target.style.border = '5px solid #D8233Dff';
-            event.target.style.opacity = '0.5';
-            if (event.target.innerHTML == 'Eger') {
-                event.target.innerHTML = 'Közel jársz';
-            }
-            else if (event.target.innerHTML == 'Debrecen') {
-                event.target.innerHTML = '<span style="font-size: 50px">😬</span>';
-            }
+            localStorage.setItem('second', 'incorrect');
         }
+        location.replace('third.html');
     });
 });
 
 //third page
-let answers = [false, false, false];
-let thirdPageButtons = document.querySelectorAll('.w250');
+let thirdPageButtons = document.querySelectorAll('.third');
 
 thirdPageButtons.forEach(element => {
     element.addEventListener('click', (event) => {
+        if (event.target.className.includes('correct')) {
+            localStorage.setItem('third', 'correct');
+            if  (localStorage.getItem('first') == 'correct' && localStorage.getItem('second') == 'correct') {
+                location.replace('fourth.html');
+            }
+            else {
+                localStorage.setItem('third', 'incorrect');
+                location.replace('mistake.html')
+            }
+        }
+        else {
+            localStorage.setItem('third', 'incorrect');
+            location.replace('mistake.html');
+        }
+    })
+});
+
+//fourth page
+let answers = [false, false, false];
+let fourthPageButtons = document.querySelectorAll('.bonus');
+
+fourthPageButtons.forEach(element => {
+    element.addEventListener('click', (event) => {
+        event.target.style.transition = 'unset';
         if (event.target.id == "_1") {
             event.target.style.border = '5px solid #4CEC68';
             answers[0] = true;
@@ -65,3 +96,17 @@ thirdPageButtons.forEach(element => {
         }
     });
 });
+
+//mistake page
+let badAnswer = 0;
+
+if (localStorage.getItem('first') == 'incorrect') {
+    badAnswer++;
+}
+if (localStorage.getItem('second') == 'incorrect') {
+    badAnswer++;
+}
+if (localStorage.getItem('third') == 'incorrect') {
+    badAnswer++;
+}
+document.getElementById('dynamic').innerHTML = `${badAnswer}`;

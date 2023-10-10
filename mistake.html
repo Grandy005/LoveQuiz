@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,27 +24,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Carter+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/@primer/css@^18.0.0/dist/primer.css" /> 
     <link rel="stylesheet" href="style.css">
     <title>Love Quiz</title>
 </head>
-<body onload="fadeInMain()">
+<body onload="fadeInButtons()">
     <div class="logoContainer">
-        <img class="logo" id="fadeInLogo" src="Love-Quiz-06-09-2023.png" alt="Love Quiz">
+        <img class="logo" src="Love-Quiz-06-09-2023.png" alt="Love Quiz">
     </div>
 
-    <div class="textContainer" id="fadeInText">
-        Üdvözöllek a Love Quiz-ben!
+    <div class="textContainer">
+        Sajnos nem sikerült.
         <br>
-        <p>Ebben a játékban összesen 3+1 kérdésre kell helyes választ adnod.
-            Miután három kérdésre helyesen válaszoltál, elérkezel a bónusz kérdéshez,
-            ami egy fantasztikus meglepetést tartogat számodra.
-            Ne csüggedj, a játékot bármikor újrakezdhetsz, hogy eljuthass a meglepetésig.
-            Készen állsz?
+        <p>
+            3 kérdésből <span id="dynamic"></span> helytelen választ adtál. <span class="bigger">🥹</span>
+            <br>Kérlek próbáld újra a játékot!
         </p>
     </div>
 
-    <a href="first.html"><button class="anim-fade-up" id="play">Játszom!</button></a>
+    <a href="first.html"><button id="retry">Újra próbálom!</button></a>
 
     <script src="script.js"></script>
 </body>
