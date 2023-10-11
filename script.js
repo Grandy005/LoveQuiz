@@ -82,7 +82,7 @@ thirdPageButtons.forEach(element => {
                 location.replace('final.html');
             }
             else {
-                location.replace('final.html')
+                location.replace('mistake.html')
             }
         }
         else {
