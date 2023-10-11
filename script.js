@@ -16,7 +16,27 @@ function fadeInButtons() {
         setTimeout(() => {
             element.style.opacity = '1';
         }, index*1000);
-    })
+    });
+}
+
+function fadeInFinal() {
+    let texts = document.querySelectorAll('span');
+
+    texts.forEach((element, index) => {
+        setTimeout(() => {
+            element.style.opacity = '1';
+        }, index*2000);
+    });
+}
+
+//index page
+let playButton = document.getElementById('play');
+
+try {
+    playButton.addEventListener('click', () => location.replace('first.html'));   
+} 
+catch {
+    
 }
 
 //first page
@@ -55,14 +75,14 @@ let thirdPageButtons = document.querySelectorAll('.third');
 
 thirdPageButtons.forEach(element => {
     element.addEventListener('click', (event) => {
+        console.log(event.target.className);
         if (event.target.className.includes('correct')) {
             localStorage.setItem('third', 'correct');
             if  (localStorage.getItem('first') == 'correct' && localStorage.getItem('second') == 'correct') {
-                location.replace('fourth.html');
+                location.replace('final.html');
             }
             else {
-                localStorage.setItem('third', 'incorrect');
-                location.replace('mistake.html')
+                location.replace('final.html')
             }
         }
         else {
@@ -92,7 +112,7 @@ fourthPageButtons.forEach(element => {
             answers[2] = true;
         }
         if ((answers[0] && answers[1] && answers[2])) {
-            setTimeout(() => window.location.replace('final.html'), 500);
+            setTimeout(() => window.location.replace('final2.html'), 500);
         }
     });
 });
@@ -109,4 +129,22 @@ if (localStorage.getItem('second') == 'incorrect') {
 if (localStorage.getItem('third') == 'incorrect') {
     badAnswer++;
 }
-document.getElementById('dynamic').innerHTML = `${badAnswer}`;
+
+let retryButton = document.getElementById('retry');
+
+try {
+    document.getElementById('dynamic').innerHTML = `${badAnswer}`;
+    retryButton.addEventListener('click', () => location.replace('first.html'));   
+} 
+catch {
+
+}
+
+//final page
+let finalButton = document.getElementById('lesssgooo');
+try {
+    finalButton.addEventListener('click', () => location.replace('fourth.html'));
+} 
+catch {
+    
+}

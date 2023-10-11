@@ -34,6 +34,7 @@ body {
 #fadeInText {
     opacity: 0;
     transition: 2s;
+    margin-bottom: 62px;
 }
 
 .buttonContainer {
@@ -47,10 +48,6 @@ body {
 
 p {
     font-size: 18px;
-}
-
-a {
-    text-decoration: none;
 }
 
 button {
@@ -72,7 +69,6 @@ button {
 #play {
     width: 198px;
     height: 80px;
-    margin-top: 62px;
 }
 
 .mainBtn {
@@ -137,4 +133,14 @@ img {
     width: 198px;
     height: 80px;
     margin-top: 180px;
+}
+
+#lesssgooo {
+    padding: 1.5rem;
+    margin-top: 60px;
+}
+
+#_1, #_2, #_3 {
+    opacity: 0;
+    transition: 2s;
 }
